@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>🥒 Die Welt der Essiggurken</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f7f0;
+    color: #263126;
+    line-height: 1.6;
+}
+
+/* Kopfbereich */
+header {
+    background: #31572c;
+    color: white;
+    text-align: center;
+    padding: 55px 20px;
+}
+
+header h1 {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 19px;
+}
+
+/* Navigation */
+nav {
+    background: #1f3d1c;
+    text-align: center;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #b7e4a8;
+}
+
+/* Inhalt */
+.container {
+    max-width: 1050px;
+    margin: auto;
+    padding: 30px 20px;
+}
+
+section {
+    background: white;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+h2 {
+    color: #31572c;
+    margin-bottom: 15px;
+    font-size: 28px;
+}
+
+h3 {
+    color: #477a3d;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+/* Startseite */
+.hero {
+    text-align: center;
+    padding: 45px 25px;
+}
+
+.gurke {
+    font-size: 80px;
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    font-size: 34px;
+}
+
+/* Karten */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.card {
+    background: #edf6e9;
+    padding: 22px;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    transition: 0.2s;
+}
+
+.card:hover {
+    border-color: #6a994e;
+    transform: translateY(-3px);
+}
+
+/* Zutaten */
+.zutaten {
+    background: #f5f8f3;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.zutaten li {
+    margin: 7px 0;
+    margin-left: 25px;
+}
+
+/* Herstellung */
+.schritte {
+    counter-reset: schritt;
+}
+
+.schritt {
+    margin: 15px 0;
+    padding: 18px;
+    background: #edf6e9;
+    border-radius: 10px;
+}
+
+/* Fakten */
+.fakt {
+    background: #fff8dc;
+    border-left: 5px solid #d4a017;
+    padding: 18px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+/* Quiz */
+.question {
+    background: #f5f8f3;
+    padding: 20px;
+    margin-top: 18px;
+    border-radius: 10px;
+}
+
+button {
+    background: #477a3d;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    margin: 7px 5px 0 0;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+button:hover {
+    background: #31572c;
+}
+
+.result {
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+#score {
+    font-size: 20px;
+    font-weight: bold;
+    color: #31572c;
+}
+
+/* Footer */
+footer {
+    background: #1f3d1c;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 20px;
+}
+
+/* Handy */
+@media (max-width: 650px) {
+
+    header h1 {
+        font-size: 32px;
+    }
+
+    nav a {
+        display: block;
+        margin: 8px;
+    }
+
+    .gurke {
+        font-size: 60px;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+```
+<h1>🥒 Die Welt der Essiggurken</h1>
+
+<p>Alles über die knackige Gurke im Glas</p>
+```
+
+</header>
+
+<nav>
+
+```
+<a href="#start">Start</a>
+<a href="#was">Was sind Essiggurken?</a>
+<a href="#herstellung">Herstellung</a>
+<a href="#fakten">Fakten</a>
+<a href="#quiz">Quiz</a>
+```
+
+</nav>
+
+<div class="container">
+
+<!-- START -->
+
+<section class="hero" id="start">
+
+```
+<div class="gurke">🥒</div>
+
+<h2>Willkommen in der Welt der Essiggurken!</h2>
+
+<p>
+    Essiggurken sind eingelegte Gurken, die durch eine
+    Mischung aus Essig, Wasser, Salz und Gewürzen ihren
+    typischen Geschmack bekommen.
+</p>
+```
+
+</section>
+
+<!-- WAS SIND ESSIGGURKEN? -->
+
+<section id="was">
+
+```
+<h2>🥒 Was sind Essiggurken?</h2>
+
+<p>
+    Eine Essiggurke ist eine Gurke, die in einer sauren
+    Flüssigkeit eingelegt wird. Dadurch bekommt sie ihren
+    typischen sauren und würzigen Geschmack.
+</p>
+
+<br>
+
+<p>
+    Gurken bestehen zu einem großen Teil aus Wasser.
+    Durch das Einlegen verändern sich Geschmack,
+    Geruch und Haltbarkeit.
+</p>
+
+<div class="cards">
+
+    <div class="card">
+        <h3>🥒 Gurke</h3>
+        <p>
+            Die Grundlage der Essiggurke.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>🧂 Salz</h3>
+        <p>
+            Wird häufig für die Einlegeflüssigkeit verwendet.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>🍶 Essig</h3>
+        <p>
+            Gibt der Gurke ihren typischen sauren Geschmack.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>🌿 Gewürze</h3>
+        <p>
+            Zum Beispiel Dill, Pfeffer oder Senfkörner.
+        </p>
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- ZUTATEN -->
+
+<section>
+
+```
+<h2>🫙 Typische Zutaten</h2>
+
+<div class="zutaten">
+
+    <ul>
+        <li>Gurken</li>
+        <li>Wasser</li>
+        <li>Essig</li>
+        <li>Salz</li>
+        <li>Dill</li>
+        <li>Pfeffer</li>
+        <li>Senfkörner</li>
+        <li>Je nach Rezept weitere Gewürze</li>
+    </ul>
+
+</div>
+```
+
+</section>
+
+<!-- HERSTELLUNG -->
+
+<section id="herstellung">
+
+```
+<h2>🫙 Wie werden Essiggurken hergestellt?</h2>
+
+<div class="schritte">
+
+    <div class="schritt">
+
+        <h3>1. Gurken auswählen</h3>
+
+        <p>
+            Zuerst werden geeignete Gurken ausgewählt
+            und gründlich gereinigt.
+        </p>
+
+    </div>
+
+    <div class="schritt">
+
+        <h3>2. Gurken ins Glas geben</h3>
+
+        <p>
+            Die Gurken werden zusammen mit Gewürzen
+            in ein sauberes Einmachglas gelegt.
+        </p>
+
+    </div>
+
+    <div class="schritt">
+
+        <h3>3. Einlegeflüssigkeit vorbereiten</h3>
+
+        <p>
+            Wasser, Essig, Salz und Gewürze werden zu
+            einer Einlegeflüssigkeit kombiniert.
+        </p>
+
+    </div>
+
+    <div class="schritt">
+
+        <h3>4. Einlegen</h3>
+
+        <p>
+            Die Einlegeflüssigkeit wird zu den Gurken
+            gegeben.
+        </p>
+
+    </div>
+
+    <div class="schritt">
+
+        <h3>5. Ziehen lassen</h3>
+
+        <p>
+            Die Gurken brauchen Zeit, damit sie den
+            Geschmack der Einlegeflüssigkeit aufnehmen.
+        </p>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- GESCHICHTE -->
+
+<section>
+
+```
+<h2>📜 Geschichte</h2>
+
+<p>
+    Das Einlegen von Lebensmitteln ist eine sehr alte
+    Methode, um Lebensmittel länger haltbar zu machen.
+</p>
+
+<p>
+    Gurken wurden in verschiedenen Regionen der Welt
+    schon vor langer Zeit durch Einlegen konserviert.
+    Dabei entstanden viele unterschiedliche Rezepte
+    und Geschmacksrichtungen.
+</p>
+```
+
+</section>
+
+<!-- GESCHMACK -->
+
+<section>
+
+```
+<h2>👅 Wie schmecken Essiggurken?</h2>
+
+<div class="cards">
+
+    <div class="card">
+        <h3>🍋 Sauer</h3>
+        <p>
+            Der Essig sorgt für den typischen sauren Geschmack.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>🧂 Salzig</h3>
+        <p>
+            Salz ist ein wichtiger Bestandteil vieler Rezepte.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>🌿 Würzig</h3>
+        <p>
+            Gewürze sorgen für unterschiedliche Aromen.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>🥒 Knackig</h3>
+        <p>
+            Gut eingelegte Gurken können angenehm knackig sein.
+        </p>
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- FAKTEN -->
+
+<section id="fakten">
+
+```
+<h2>💡 Interessante Fakten</h2>
+
+<div class="fakt">
+    🥒 Essiggurken werden auch als Gewürzgurken bezeichnet.
+</div>
+
+<div class="fakt">
+    🫙 Essiggurken werden häufig in Gläsern aufbewahrt.
+</div>
+
+<div class="fakt">
+    🌿 Dill ist ein sehr häufig verwendetes Gewürz bei Gurken.
+</div>
+
+<div class="fakt">
+    🍶 Essig sorgt für den charakteristischen sauren Geschmack.
+</div>
+```
+
+</section>
+
+<!-- QUIZ -->
+
+<section id="quiz">
+
+```
+<h2>🎯 Essiggurken-Quiz</h2>
+
+<p id="score">Punkte: 0 / 5</p>
+
+
+<div class="question">
+
+    <h3>1. Was ist eine Essiggurke?</h3>
+
+    <button onclick="check(1, true)">
+        Eine eingelegte Gurke
+    </button>
+
+    <button onclick="check(1, false)">
+        Eine Kartoffel
+    </button>
+
+    <button onclick="check(1, false)">
+        Eine Tomate
+    </button>
+
+    <div id="r1" class="result"></div>
+
+</div>
+
+
+<div class="question">
+
+    <h3>2. Was sorgt hauptsächlich für den sauren Geschmack?</h3>
+
+    <button onclick="check(2, false)">
+        Zucker
+    </button>
+
+    <button onclick="check(2, true)">
+        Essig
+    </button>
+
+    <button onclick="check(2, false)">
+        Mehl
+    </button>
+
+    <div id="r2" class="result"></div>
+
+</div>
+
+
+<div class="question">
+
+    <h3>3. Welches Gewürz wird häufig bei Gurken verwendet?</h3>
+
+    <button onclick="check(3, true)">
+        Dill
+    </button>
+
+    <button onclick="check(3, false)">
+        Kakao
+    </button>
+
+    <button onclick="check(3, false)">
+        Vanille
+    </button>
+
+    <div id="r3" class="result"></div>
+
+</div>
+
+
+<div class="question">
+
+    <h3>4. Wo werden Essiggurken häufig aufbewahrt?</h3>
+
+    <button onclick="check(4, false)">
+        In einem Schuh
+    </button>
+
+    <button onclick="check(4, true)">
+        In einem Glas
+    </button>
+
+    <button onclick="check(4, false)">
+        In einem Papierumschlag
+    </button>
+
+    <div id="r4" class="result"></div>
+
+</div>
+
+
+<div class="question">
+
+    <h3>5. Was kann eine gute Essiggurke sein?</h3>
+
+    <button onclick="check(5, true)">
+        Knackig
+    </button>
+
+    <button onclick="check(5, false)">
+        Laut
+    </button>
+
+    <button onclick="check(5, false)">
+        Elektrisch
+    </button>
+
+    <div id="r5" class="result"></div>
+
+</div>
+
+
+<br>
+
+<button onclick="resetQuiz()">
+    🔄 Quiz zurücksetzen
+</button>
+```
+
+</section>
+
+</div>
+
+<footer>
+
+```
+<p>🥒 Die Welt der Essiggurken</p>
+
+<p>Eine kleine Website über Gurken, Essig und Gewürze.</p>
+```
+
+</footer>
+
+<script>
+
+let score = 0;
+let answered = {};
+
+function check(question, correct) {
+
+    if (answered[question]) {
+        return;
+    }
+
+    answered[question] = true;
+
+    const result = document.getElementById("r" + question);
+
+    if (correct) {
+
+        score++;
+
+        result.textContent = "✅ Richtig!";
+        result.style.color = "green";
+
+    } else {
+
+        result.textContent = "❌ Falsch!";
+        result.style.color = "red";
+
+    }
+
+    document.getElementById("score").textContent =
+        "Punkte: " + score + " / 5";
+}
+
+
+function resetQuiz() {
+
+    score = 0;
+    answered = {};
+
+    document.getElementById("score").textContent =
+        "Punkte: 0 / 5";
+
+    for (let i = 1; i <= 5; i++) {
+
+        document.getElementById("r" + i).textContent = "";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Informatik verstehen</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f4f7;
+    color: #202124;
+    line-height: 1.6;
+}
+
+/* HEADER */
+
+header {
+    background: #17202a;
+    color: white;
+    padding: 45px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 19px;
+}
+
+/* NAVIGATION */
+
+nav {
+    background: #273746;
+    padding: 15px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #5dade2;
+}
+
+/* CONTAINER */
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 30px 20px;
+}
+
+/* HERO */
+
+.hero {
+    background: white;
+    padding: 45px;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.hero h2 {
+    font-size: 32px;
+    color: #1f618d;
+    margin-bottom: 15px;
+}
+
+/* SECTIONS */
+
+.section {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.section h2 {
+    color: #1f618d;
+    margin-bottom: 15px;
+}
+
+.section h3 {
+    margin-top: 20px;
+    margin-bottom: 8px;
+    color: #273746;
+}
+
+/* THEMEN */
+
+.themen {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 18px;
+}
+
+.thema {
+    background: #ebf5fb;
+    padding: 22px;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.thema:hover {
+    border-color: #3498db;
+    transform: translateY(-3px);
+}
+
+.thema h3 {
+    margin-top: 0;
+    color: #21618c;
+}
+
+/* INFO BOX */
+
+.info {
+    background: #f8f9f9;
+    border-left: 5px solid #3498db;
+    padding: 18px;
+    margin: 15px 0;
+    border-radius: 5px;
+}
+
+/* CODE */
+
+code {
+    display: block;
+    background: #17202a;
+    color: #ecf0f1;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 15px 0;
+    font-family: Consolas, monospace;
+    white-space: pre-wrap;
+}
+
+/* QUIZ */
+
+.question {
+    background: #f8f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 18px;
+}
+
+button {
+    background: #2980b9;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    margin: 8px 5px 0 0;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+button:hover {
+    background: #1f618d;
+}
+
+.result {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* FOOTER */
+
+footer {
+    background: #17202a;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    nav a {
+        display: block;
+        margin: 8px;
+    }
+
+    .hero {
+        padding: 30px 20px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+```
+<h1>💻 Informatik verstehen</h1>
+
+<p>
+    Lerne, wie Informatik aufgebaut ist – von Hardware bis Software.
+</p>
+```
+
+</header>
+
+<nav>
+
+```
+<a href="#start">Start</a>
+<a href="#aufbau">Aufbau</a>
+<a href="#hardware">Hardware</a>
+<a href="#software">Software</a>
+<a href="#netzwerke">Netzwerke</a>
+<a href="#programmierung">Programmierung</a>
+<a href="#quiz">Quiz</a>
+```
+
+</nav>
+
+<div class="container">
+
+<!-- START -->
+
+<section class="hero" id="start">
+
+```
+<h2>Was ist Informatik?</h2>
+
+<p>
+    Informatik beschäftigt sich mit der Verarbeitung,
+    Speicherung und Übertragung von Informationen.
+</p>
+
+<br>
+
+<p>
+    Ein Computer besteht dabei nicht nur aus einem Gerät.
+    Informatik besteht aus vielen verschiedenen Bereichen,
+    die miteinander verbunden sind.
+</p>
+```
+
+</section>
+
+<!-- AUFBAU -->
+
+<section class="section" id="aufbau">
+
+```
+<h2>🧩 Wie ist Informatik aufgebaut?</h2>
+
+<p>
+    Die Informatik kann in verschiedene Bereiche eingeteilt werden.
+    Jeder Bereich erfüllt eine bestimmte Aufgabe.
+</p>
+
+<br>
+
+<div class="themen">
+
+    <div class="thema">
+        <h3>1. Hardware</h3>
+        <p>
+            Die physischen Teile eines Computers.
+        </p>
+    </div>
+
+    <div class="thema">
+        <h3>2. Software</h3>
+        <p>
+            Programme und Anwendungen, die auf einem Computer laufen.
+        </p>
+    </div>
+
+    <div class="thema">
+        <h3>3. Betriebssysteme</h3>
+        <p>
+            Sie verwalten die Hardware und ermöglichen die Nutzung
+            des Computers.
+        </p>
+    </div>
+
+    <div class="thema">
+        <h3>4. Netzwerke</h3>
+        <p>
+            Computer können miteinander verbunden werden.
+        </p>
+    </div>
+
+    <div class="thema">
+        <h3>5. Internet</h3>
+        <p>
+            Ein weltweites Netzwerk aus vielen miteinander verbundenen
+            Netzwerken.
+        </p>
+    </div>
+
+    <div class="thema">
+        <h3>6. Datenbanken</h3>
+        <p>
+            Systeme zum Speichern und Verwalten großer Datenmengen.
+        </p>
+    </div>
+
+    <div class="thema">
+        <h3>7. Programmierung</h3>
+        <p>
+            Programme werden mithilfe von Programmiersprachen entwickelt.
+        </p>
+    </div>
+
+    <div class="thema">
+        <h3>8. Algorithmen</h3>
+        <p>
+            Schritt-für-Schritt-Anleitungen zur Lösung von Problemen.
+        </p>
+    </div>
+
+    <div class="thema">
+        <h3>9. IT-Sicherheit</h3>
+        <p>
+            Schutz von Computern, Netzwerken und Daten.
+        </p>
+    </div>
+
+    <div class="thema">
+        <h3>10. Daten</h3>
+        <p>
+            Informationen, die von Computern gespeichert und verarbeitet
+            werden können.
+        </p>
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- HARDWARE -->
+
+<section class="section" id="hardware">
+
+```
+<h2>🖥️ 1. Hardware</h2>
+
+<p>
+    Hardware bezeichnet alle Teile eines Computers,
+    die man physisch anfassen kann.
+</p>
+
+<div class="info">
+
+    <b>Beispiele:</b>
+
+    <br>
+
+    CPU – verarbeitet Befehle
+
+    <br>
+
+    RAM – kurzfristiger Speicher
+
+    <br>
+
+    SSD – langfristiger Speicher
+
+    <br>
+
+    Mainboard – verbindet die Komponenten
+
+    <br>
+
+    GPU – verarbeitet Grafiken
+
+</div>
+```
+
+</section>
+
+<!-- SOFTWARE -->
+
+<section class="section" id="software">
+
+```
+<h2>💿 2. Software</h2>
+
+<p>
+    Software besteht aus Programmen und Anweisungen,
+    die von einem Computer ausgeführt werden.
+</p>
+
+<h3>Beispiele</h3>
+
+<p>
+    Browser, Spiele, Textprogramme, Bildbearbeitung
+    und viele andere Anwendungen sind Software.
+</p>
+
+<div class="info">
+
+    <b>Merksatz:</b>
+
+    <br>
+
+    Hardware = das, was man anfassen kann.
+
+    <br>
+
+    Software = Programme und Anweisungen.
+
+</div>
+```
+
+</section>
+
+<!-- BETRIEBSSYSTEM -->
+
+<section class="section">
+
+```
+<h2>⚙️ 3. Betriebssystem</h2>
+
+<p>
+    Das Betriebssystem ist eine wichtige Software,
+    die die Hardware und Programme verwaltet.
+</p>
+
+<h3>Beispiele</h3>
+
+<p>
+    Windows, Linux, macOS, Android und iOS.
+</p>
+
+<div class="info">
+
+    Ohne ein Betriebssystem wäre die normale Nutzung
+    eines Computers deutlich schwieriger.
+
+</div>
+```
+
+</section>
+
+<!-- NETZWERKE -->
+
+<section class="section" id="netzwerke">
+
+```
+<h2>🌐 4. Netzwerke</h2>
+
+<p>
+    Ein Netzwerk verbindet mehrere Geräte miteinander.
+    Dadurch können sie Daten austauschen.
+</p>
+
+<h3>Beispiel</h3>
+
+<p>
+    Dein Computer kann über einen Router mit anderen Geräten
+    und mit dem Internet verbunden werden.
+</p>
+
+<div class="info">
+
+    Computer → Router → Internet → anderer Server
+
+</div>
+```
+
+</section>
+
+<!-- INTERNET -->
+
+<section class="section">
+
+```
+<h2>🌍 5. Internet</h2>
+
+<p>
+    Das Internet ist ein weltweites Netzwerk aus vielen
+    miteinander verbundenen Netzwerken.
+</p>
+
+<p>
+    Wenn du eine Website aufrufst, werden Daten zwischen
+    deinem Gerät und einem Server übertragen.
+</p>
+```
+
+</section>
+
+<!-- DATENBANKEN -->
+
+<section class="section">
+
+```
+<h2>🗄️ 6. Datenbanken</h2>
+
+<p>
+    Eine Datenbank speichert Informationen strukturiert,
+    sodass sie später schnell gefunden und verarbeitet
+    werden können.
+</p>
+
+<div class="info">
+
+    Beispiel:
+
+    <br><br>
+
+    Name: Gabriel
+
+    <br>
+
+    Alter: 14
+
+    <br>
+
+    Klasse: Informatik
+
+</div>
+```
+
+</section>
+
+<!-- PROGRAMMIERUNG -->
+
+<section class="section" id="programmierung">
+
+```
+<h2>👨‍💻 7. Programmierung</h2>
+
+<p>
+    Bei der Programmierung schreibt man Anweisungen,
+    die ein Computer ausführen kann.
+</p>
+
+<h3>Beispiel Java</h3>
+
+<code>
+```
+
+int zahl = 10;
+
+if (zahl > 5) {
+System.out.println("Die Zahl ist größer als 5.");
+} </code>
+
+```
+<p>
+    Programmiersprachen sind zum Beispiel Java,
+    Python, JavaScript, C++ und C#.
+</p>
+```
+
+</section>
+
+<!-- ALGORITHMEN -->
+
+<section class="section">
+
+```
+<h2>🧠 8. Algorithmen</h2>
+
+<p>
+    Ein Algorithmus ist eine genaue Schritt-für-Schritt-Anleitung,
+    mit der ein Problem gelöst werden kann.
+</p>
+
+<h3>Einfaches Beispiel</h3>
+
+<ol>
+    <li>Eine Zahl eingeben</li>
+    <li>Die Zahl überprüfen</li>
+    <li>Ergebnis berechnen</li>
+    <li>Ergebnis ausgeben</li>
+</ol>
+```
+
+</section>
+
+<!-- IT SICHERHEIT -->
+
+<section class="section">
+
+```
+<h2>🔐 9. IT-Sicherheit</h2>
+
+<p>
+    IT-Sicherheit beschäftigt sich damit,
+    Computer, Netzwerke und Daten vor unbefugtem Zugriff
+    und anderen Gefahren zu schützen.
+</p>
+
+<div class="info">
+
+    Wichtige Themen sind zum Beispiel:
+
+    <br>
+
+    Passwörter
+
+    <br>
+
+    Verschlüsselung
+
+    <br>
+
+    Firewalls
+
+    <br>
+
+    Backups
+
+</div>
+```
+
+</section>
+
+<!-- DATEN -->
+
+<section class="section">
+
+```
+<h2>📊 10. Daten</h2>
+
+<p>
+    Computer verarbeiten Informationen in Form von Daten.
+</p>
+
+<p>
+    Computer können beispielsweise Texte, Bilder,
+    Videos und Zahlen speichern und verarbeiten.
+</p>
+```
+
+</section>
+
+<!-- QUIZ -->
+
+<section class="section" id="quiz">
+
+```
+<h2>🎯 Teste dein Wissen</h2>
+
+<p id="score">
+    Punkte: 0 / 5
+</p>
+
+
+<div class="question">
+
+    <h3>1. Was ist Hardware?</h3>
+
+    <button onclick="check(1, true)">
+        Physische Bestandteile eines Computers
+    </button>
+
+    <button onclick="check(1, false)">
+        Programme
+    </button>
+
+    <button onclick="check(1, false)">
+        Webseiten
+    </button>
+
+    <div id="r1" class="result"></div>
+
+</div>
+
+
+<div class="question">
+
+    <h3>2. Was ist Software?</h3>
+
+    <button onclick="check(2, false)">
+        Ein Kabel
+    </button>
+
+    <button onclick="check(2, true)">
+        Programme und Anweisungen
+    </button>
+
+    <button onclick="check(2, false)">
+        Ein Prozessor
+    </button>
+
+    <div id="r2" class="result"></div>
+
+</div>
+
+
+<div class="question">
+
+    <h3>3. Was macht ein Betriebssystem?</h3>
+
+    <button onclick="check(3, true)">
+        Es verwaltet Hardware und Programme
+    </button>
+
+    <button onclick="check(3, false)">
+        Es ist nur ein Computerspiel
+    </button>
+
+    <button onclick="check(3, false)">
+        Es ist ein Kabel
+    </button>
+
+    <div id="r3" class="result"></div>
+
+</div>
+
+
+<div class="question">
+
+    <h3>4. Was ist ein Algorithmus?</h3>
+
+    <button onclick="check(4, false)">
+        Ein Computerteil
+    </button>
+
+    <button onclick="check(4, true)">
+        Eine Schritt-für-Schritt-Anleitung
+    </button>
+
+    <button onclick="check(4, false)">
+        Ein Betriebssystem
+    </button>
+
+    <div id="r4" class="result"></div>
+
+</div>
+
+
+<div class="question">
+
+    <h3>5. Was ist ein Netzwerk?</h3>
+
+    <button onclick="check(5, false)">
+        Ein einzelnes Programm
+    </button>
+
+    <button onclick="check(5, false)">
+        Eine Festplatte
+    </button>
+
+    <button onclick="check(5, true)">
+        Eine Verbindung mehrerer Geräte
+    </button>
+
+    <div id="r5" class="result"></div>
+
+</div>
+
+
+<br>
+
+<button onclick="resetQuiz()">
+    🔄 Quiz zurücksetzen
+</button>
+```
+
+</section>
+
+</div>
+
+<footer>
+
+```
+<p>💻 Informatik verstehen</p>
+
+<p>
+    Lernen · Verstehen · Üben
+</p>
+```
+
+</footer>
+
+<script>
+
+let score = 0;
+let answered = {};
+
+function check(question, correct) {
+
+    if (answered[question]) {
+        return;
+    }
+
+    answered[question] = true;
+
+    let result = document.getElementById("r" + question);
+
+    if (correct) {
+
+        score++;
+
+        result.textContent = "✅ Richtig!";
+        result.style.color = "green";
+
+    } else {
+
+        result.textContent = "❌ Falsch!";
+        result.style.color = "red";
+
+    }
+
+    document.getElementById("score").textContent =
+        "Punkte: " + score + " / 5";
+}
+
+
+function resetQuiz() {
+
+    score = 0;
+    answered = {};
+
+    document.getElementById("score").textContent =
+        "Punkte: 0 / 5";
+
+    for (let i = 1; i <= 5; i++) {
+
+        document.getElementById("r" + i).textContent = "";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>

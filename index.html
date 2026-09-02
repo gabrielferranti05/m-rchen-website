@@ -1,0 +1,1318 @@
+```html
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Das Geheimnis des verzauberten Waldes</title>
+
+    <style>
+
+        /* =========================
+           GRUNDLAGEN
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --background: #080d18;
+            --background-light: #10182a;
+            --card: #111b2e;
+            --gold: #d8b56a;
+            --gold-light: #f1d995;
+            --text: #eee9dc;
+            --text-muted: #a9aebc;
+            --border: rgba(216, 181, 106, 0.25);
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(8, 13, 24, 0.94);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            min-height: 75px;
+            padding: 0 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            color: var(--gold-light);
+            font-size: 21px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+
+        .menu-button {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--gold-light);
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           STARTSEITE
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+            padding: 120px 25px 80px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at 50% 40%,
+                    rgba(67, 83, 135, 0.35),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    180deg,
+                    #0d1528,
+                    #080d18
+                );
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .magic-symbol {
+            color: var(--gold-light);
+            font-size: 70px;
+
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        .subtitle,
+        .small-title {
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 90px);
+            line-height: 1.05;
+            margin: 25px 0;
+            color: var(--gold-light);
+        }
+
+        .hero-text {
+            color: var(--text-muted);
+            font-size: 20px;
+            margin-bottom: 40px;
+        }
+
+        .main-button {
+            display: inline-block;
+            padding: 15px 32px;
+
+            border: 1px solid var(--gold);
+            border-radius: 5px;
+
+            color: var(--gold-light);
+
+            transition: 0.3s;
+        }
+
+        .main-button:hover {
+            background: var(--gold);
+            color: #080d18;
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================
+           EINLEITUNG
+        ========================= */
+
+        .intro {
+            max-width: 800px;
+            margin: auto;
+            padding: 120px 25px;
+            text-align: center;
+        }
+
+        .intro h2 {
+            font-size: 42px;
+            color: var(--gold-light);
+            margin: 20px 0 30px;
+        }
+
+        .intro p:not(.small-title) {
+            color: var(--text-muted);
+            margin-bottom: 18px;
+            font-size: 18px;
+        }
+
+        .intro strong {
+            color: var(--gold-light);
+        }
+
+
+        /* =========================
+           ÜBERSCHRIFTEN
+        ========================= */
+
+        .section-heading {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 80px;
+        }
+
+        .section-heading h2 {
+            color: var(--gold-light);
+            font-size: clamp(32px, 5vw, 52px);
+            margin: 15px 0 25px;
+        }
+
+        .line {
+            width: 80px;
+            height: 1px;
+            background: var(--gold);
+            margin: auto;
+        }
+
+
+        /* =========================
+           GESCHICHTE
+        ========================= */
+
+        .story {
+            max-width: 1050px;
+            margin: auto;
+            padding: 120px 25px;
+        }
+
+        .chapter {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 40px;
+
+            margin-bottom: 100px;
+            padding-bottom: 70px;
+
+            border-bottom: 1px solid var(--border);
+
+            opacity: 0;
+            transform: translateY(30px);
+
+            transition: 0.8s;
+        }
+
+        .chapter.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .chapter-number {
+            color: var(--gold);
+            font-size: 45px;
+            font-weight: bold;
+        }
+
+        .chapter h3 {
+            font-size: 32px;
+            color: var(--gold-light);
+            margin-bottom: 25px;
+        }
+
+        .chapter p {
+            color: var(--text-muted);
+            font-size: 18px;
+            margin-bottom: 18px;
+        }
+
+        .quote {
+            color: var(--gold-light) !important;
+            font-style: italic;
+            font-size: 22px !important;
+
+            padding: 20px 25px;
+
+            border-left: 2px solid var(--gold);
+
+            background: rgba(216, 181, 106, 0.05);
+        }
+
+        .final-chapter {
+            border-bottom: none;
+        }
+
+        .the-end {
+            color: var(--gold-light);
+            font-size: 28px;
+            text-align: center;
+            margin-top: 45px;
+        }
+
+
+        /* =========================
+           FIGUREN
+        ========================= */
+
+        .characters {
+            background: var(--background-light);
+            padding: 120px 25px;
+        }
+
+        .character-grid {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .character-card {
+            background: var(--card);
+            padding: 40px;
+
+            border: 1px solid var(--border);
+            border-radius: 8px;
+
+            transition: 0.3s;
+        }
+
+        .character-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--gold);
+        }
+
+        .character-icon {
+            font-size: 45px;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .character-card h3 {
+            font-size: 28px;
+            color: var(--gold-light);
+            margin-bottom: 15px;
+        }
+
+        .character-card p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .character-card span {
+            color: var(--gold);
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           KAPITEL
+        ========================= */
+
+        .chapter-menu {
+            max-width: 1000px;
+            margin: auto;
+            padding: 120px 25px;
+        }
+
+        .chapter-buttons {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .chapter-buttons button {
+            padding: 22px;
+
+            text-align: left;
+
+            background: var(--card);
+            color: var(--text);
+
+            border: 1px solid var(--border);
+            border-radius: 6px;
+
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 16px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .chapter-buttons button:hover {
+            border-color: var(--gold);
+            color: var(--gold-light);
+            transform: translateX(5px);
+        }
+
+        .chapter-buttons span {
+            color: var(--gold);
+            font-weight: bold;
+            margin-right: 15px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+            padding: 80px 25px;
+
+            background: #050913;
+
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-symbol {
+            color: var(--gold);
+            font-size: 40px;
+        }
+
+        footer h2 {
+            color: var(--gold-light);
+            margin: 15px 0;
+        }
+
+        footer p {
+            color: var(--text-muted);
+        }
+
+        .copyright {
+            margin-top: 35px;
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           NACH OBEN
+        ========================= */
+
+        .top-button {
+            position: fixed;
+
+            right: 25px;
+            bottom: 25px;
+
+            width: 50px;
+            height: 50px;
+
+            border-radius: 50%;
+            border: 1px solid var(--gold);
+
+            background: var(--card);
+            color: var(--gold-light);
+
+            font-size: 22px;
+
+            cursor: pointer;
+
+            opacity: 0;
+            pointer-events: none;
+
+            transition: 0.3s;
+        }
+
+        .top-button.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+
+        /* =========================
+           HANDY
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            .nav-links {
+                position: absolute;
+
+                top: 75px;
+                left: 0;
+
+                width: 100%;
+
+                display: none;
+                flex-direction: column;
+
+                padding: 25px;
+
+                background: #080d18;
+
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-button {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero-text {
+                font-size: 17px;
+            }
+
+            .intro h2 {
+                font-size: 32px;
+            }
+
+            .chapter {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .chapter-number {
+                font-size: 30px;
+            }
+
+            .chapter h3 {
+                font-size: 27px;
+            }
+
+            .character-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .chapter-buttons {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <header>
+
+        <nav>
+
+            <div class="logo">
+                ✦ Märchenwelt
+            </div>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="#start">Start</a>
+                </li>
+
+                <li>
+                    <a href="#geschichte">Geschichte</a>
+                </li>
+
+                <li>
+                    <a href="#figuren">Figuren</a>
+                </li>
+
+                <li>
+                    <a href="#kapitel">Kapitel</a>
+                </li>
+
+            </ul>
+
+            <button class="menu-button" id="menuButton">
+                ☰
+            </button>
+
+        </nav>
+
+    </header>
+
+
+    <!-- STARTSEITE -->
+
+    <section id="start" class="hero">
+
+        <div class="hero-content">
+
+            <div class="magic-symbol">
+                ✧
+            </div>
+
+            <p class="subtitle">
+                Ein geheimnisvolles Märchen
+            </p>
+
+            <h1>
+                Das Geheimnis des
+                <br>
+                verzauberten Waldes
+            </h1>
+
+            <p class="hero-text">
+                Eine Reise voller Magie, Mut und Freundschaft beginnt.
+            </p>
+
+            <a href="#geschichte" class="main-button">
+                Geschichte beginnen
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- EINLEITUNG -->
+
+    <section class="intro">
+
+        <p class="small-title">
+            ES WAR EINMAL...
+        </p>
+
+        <h2>
+            Ein Wald voller Geheimnisse
+        </h2>
+
+        <p>
+            Hinter einem kleinen Dorf lag ein uralter Wald.
+            Niemand aus dem Dorf wagte sich tief hinein,
+            denn die Menschen erzählten sich, dass dort Dinge
+            geschahen, die man sich nicht erklären konnte.
+        </p>
+
+        <p>
+            Doch eines Tages machte sich ein junges Mädchen
+            namens <strong>Elara</strong> auf den Weg in den Wald.
+            Sie ahnte nicht, dass sie dort das größte Geheimnis
+            ihres Lebens entdecken würde.
+        </p>
+
+    </section>
+
+
+    <!-- GESCHICHTE -->
+
+    <section id="geschichte" class="story">
+
+        <div class="section-heading">
+
+            <p class="small-title">
+                DIE GESCHICHTE
+            </p>
+
+            <h2>
+                Das Geheimnis des verzauberten Waldes
+            </h2>
+
+            <div class="line"></div>
+
+        </div>
+
+
+        <!-- KAPITEL 1 -->
+
+        <article class="chapter" id="kapitel1">
+
+            <span class="chapter-number">
+                01
+            </span>
+
+            <div>
+
+                <h3>
+                    Der Ruf des Waldes
+                </h3>
+
+                <p>
+                    Es war eine kalte Herbstnacht, als Elara vor
+                    ihrem kleinen Fenster stand. Der Mond schien
+                    hell über das Dorf und tauchte die Dächer
+                    in silbernes Licht.
+                </p>
+
+                <p>
+                    Plötzlich hörte sie ein leises Flüstern.
+                    Es kam aus Richtung des Waldes.
+                </p>
+
+                <p class="quote">
+                    „Komm... wir brauchen deine Hilfe.“
+                </p>
+
+                <p>
+                    Elara wusste, dass sie vorsichtig sein musste.
+                    Trotzdem nahm sie ihre Laterne und verließ
+                    heimlich das Haus. Schritt für Schritt ging
+                    sie auf den dunklen Wald zu.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- KAPITEL 2 -->
+
+        <article class="chapter" id="kapitel2">
+
+            <span class="chapter-number">
+                02
+            </span>
+
+            <div>
+
+                <h3>
+                    Der geheimnisvolle Fremde
+                </h3>
+
+                <p>
+                    Je tiefer Elara in den Wald ging, desto
+                    seltsamer wurde ihre Umgebung. Die Bäume
+                    waren riesig und ihre Äste bewegten sich,
+                    obwohl kein Wind wehte.
+                </p>
+
+                <p>
+                    Auf einmal stand ein Junge auf dem Weg.
+                    Er trug einen dunklen Umhang und hielt
+                    einen alten silbernen Schlüssel in der Hand.
+                </p>
+
+                <p>
+                    „Du solltest nicht hier sein“, sagte er.
+                </p>
+
+                <p>
+                    „Warum?“, fragte Elara.
+                </p>
+
+                <p>
+                    Der Junge sah sie ernst an.
+                </p>
+
+                <p>
+                    „Weil dieser Wald ein Geheimnis bewahrt.
+                    Und jemand versucht, es zu zerstören.“
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- KAPITEL 3 -->
+
+        <article class="chapter" id="kapitel3">
+
+            <span class="chapter-number">
+                03
+            </span>
+
+            <div>
+
+                <h3>
+                    Das Tor aus Licht
+                </h3>
+
+                <p>
+                    Gemeinsam gingen Elara und der Fremde weiter.
+                    Nach einiger Zeit kamen sie zu einer alten
+                    Steinmauer.
+                </p>
+
+                <p>
+                    In der Mitte befand sich ein Tor. Es war
+                    vollkommen durchsichtig und leuchtete in
+                    einem geheimnisvollen goldenen Licht.
+                </p>
+
+                <p>
+                    Der Junge steckte den silbernen Schlüssel
+                    in das Tor. Sofort begann der ganze Wald
+                    zu leuchten.
+                </p>
+
+                <p class="quote">
+                    „Hinter diesem Tor liegt das Herz des Waldes.“
+                </p>
+
+                <p>
+                    Elara nahm all ihren Mut zusammen und
+                    ging hindurch.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- KAPITEL 4 -->
+
+        <article class="chapter" id="kapitel4">
+
+            <span class="chapter-number">
+                04
+            </span>
+
+            <div>
+
+                <h3>
+                    Das Herz des Waldes
+                </h3>
+
+                <p>
+                    Hinter dem Tor befand sich eine wunderschöne
+                    Lichtung. In ihrer Mitte stand ein riesiger
+                    alter Baum.
+                </p>
+
+                <p>
+                    Seine Äste reichten bis in den Himmel.
+                    Zwischen den Zweigen schwebten kleine
+                    Lichtkugeln.
+                </p>
+
+                <p>
+                    „Das ist das Herz des Waldes“, erklärte
+                    der Junge.
+                </p>
+
+                <p>
+                    Doch plötzlich wurde das Licht schwächer.
+                </p>
+
+                <p>
+                    Eine dunkle Gestalt erschien zwischen den
+                    Bäumen. Sie wollte die Magie des Waldes
+                    an sich nehmen.
+                </p>
+
+                <p>
+                    Elara wusste, dass sie etwas tun musste.
+                    Sie stellte sich vor den Baum und hielt
+                    ihre Laterne hoch.
+                </p>
+
+                <p>
+                    Das Licht der Laterne begann stärker
+                    zu werden.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- KAPITEL 5 -->
+
+        <article class="chapter" id="kapitel5">
+
+            <span class="chapter-number">
+                05
+            </span>
+
+            <div>
+
+                <h3>
+                    Mut und Freundschaft
+                </h3>
+
+                <p>
+                    Elara hatte Angst. Doch sie lief nicht weg.
+                </p>
+
+                <p>
+                    Der Junge stellte sich neben sie.
+                    Gemeinsam hielten sie dem Schatten stand.
+                </p>
+
+                <p>
+                    Je mehr sie zusammenhielten, desto heller
+                    wurde das Licht des Baumes.
+                </p>
+
+                <p>
+                    Schließlich wurde der Schatten immer
+                    kleiner und verschwand im Nebel.
+                </p>
+
+                <p>
+                    Der Wald war gerettet.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- KAPITEL 6 -->
+
+        <article class="chapter final-chapter" id="kapitel6">
+
+            <span class="chapter-number">
+                06
+            </span>
+
+            <div>
+
+                <h3>
+                    Das Ende
+                </h3>
+
+                <p>
+                    Als Elara am nächsten Morgen in ihr Dorf
+                    zurückkehrte, war alles ruhig.
+                </p>
+
+                <p>
+                    Niemand wusste, was in dieser Nacht
+                    geschehen war. Doch seit diesem Tag
+                    blühten im Dorf die Blumen selbst im
+                    tiefsten Winter.
+                </p>
+
+                <p>
+                    Elara wusste, dass der Wald sie niemals
+                    vergessen würde.
+                </p>
+
+                <p class="quote">
+                    Und wenn der Mond besonders hell scheint,
+                    kann man vielleicht noch heute das
+                    Flüstern des Waldes hören.
+                </p>
+
+                <div class="the-end">
+                    ✦ Ende ✦
+                </div>
+
+            </div>
+
+        </article>
+
+    </section>
+
+
+    <!-- FIGUREN -->
+
+    <section id="figuren" class="characters">
+
+        <div class="section-heading">
+
+            <p class="small-title">
+                DIE FIGUREN
+            </p>
+
+            <h2>
+                Wer spielt im Märchen mit?
+            </h2>
+
+            <div class="line"></div>
+
+        </div>
+
+
+        <div class="character-grid">
+
+
+            <div class="character-card">
+
+                <div class="character-icon">
+                    ♕
+                </div>
+
+                <h3>
+                    Elara
+                </h3>
+
+                <p>
+                    Ein mutiges Mädchen, das sich trotz
+                    ihrer Angst in den verzauberten Wald wagt.
+                </p>
+
+                <span>
+                    Mutig · Neugierig · Hilfsbereit
+                </span>
+
+            </div>
+
+
+            <div class="character-card">
+
+                <div class="character-icon">
+                    ✦
+                </div>
+
+                <h3>
+                    Der Fremde
+                </h3>
+
+                <p>
+                    Ein geheimnisvoller Junge, der das
+                    Geheimnis des Waldes bereits kennt.
+                </p>
+
+                <span>
+                    Ruhig · Geheimnisvoll · Loyal
+                </span>
+
+            </div>
+
+
+            <div class="character-card">
+
+                <div class="character-icon">
+                    ♣
+                </div>
+
+                <h3>
+                    Das Herz des Waldes
+                </h3>
+
+                <p>
+                    Ein uralter Baum, der die magische
+                    Kraft des Waldes bewahrt.
+                </p>
+
+                <span>
+                    Magisch · Weise · Mächtig
+                </span>
+
+            </div>
+
+
+            <div class="character-card">
+
+                <div class="character-icon">
+                    ☾
+                </div>
+
+                <h3>
+                    Der Schatten
+                </h3>
+
+                <p>
+                    Eine dunkle Gestalt, die versucht,
+                    die Magie des Waldes zu stehlen.
+                </p>
+
+                <span>
+                    Gefährlich · Dunkel · Rätselhaft
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- KAPITEL-MENÜ -->
+
+    <section id="kapitel" class="chapter-menu">
+
+        <div class="section-heading">
+
+            <p class="small-title">
+                ENTDECKE DIE GESCHICHTE
+            </p>
+
+            <h2>
+                Kapitel auswählen
+            </h2>
+
+            <div class="line"></div>
+
+        </div>
+
+
+        <div class="chapter-buttons">
+
+            <button onclick="goToChapter('kapitel1')">
+                <span>01</span>
+                Der Ruf des Waldes
+            </button>
+
+            <button onclick="goToChapter('kapitel2')">
+                <span>02</span>
+                Der geheimnisvolle Fremde
+            </button>
+
+            <button onclick="goToChapter('kapitel3')">
+                <span>03</span>
+                Das Tor aus Licht
+            </button>
+
+            <button onclick="goToChapter('kapitel4')">
+                <span>04</span>
+                Das Herz des Waldes
+            </button>
+
+            <button onclick="goToChapter('kapitel5')">
+                <span>05</span>
+                Mut und Freundschaft
+            </button>
+
+            <button onclick="goToChapter('kapitel6')">
+                <span>06</span>
+                Das Ende
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-symbol">
+            ✦
+        </div>
+
+        <h2>
+            Das Geheimnis des verzauberten Waldes
+        </h2>
+
+        <p>
+            Eine Märchengeschichte über Mut,
+            Freundschaft und Magie.
+        </p>
+
+        <p class="copyright">
+            © 2026 Märchenwelt · Eine eigene Märchengeschichte
+        </p>
+
+    </footer>
+
+
+    <!-- NACH OBEN BUTTON -->
+
+    <button id="topButton" class="top-button">
+        ↑
+    </button>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        /* =========================
+           MOBILE MENÜ
+        ========================= */
+
+        const menuButton =
+            document.getElementById("menuButton");
+
+        const navLinks =
+            document.querySelector(".nav-links");
+
+
+        menuButton.addEventListener("click", function () {
+
+            navLinks.classList.toggle("active");
+
+        });
+
+
+        /* Menü schliessen */
+
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(function(link) {
+
+                link.addEventListener("click", function() {
+
+                    navLinks.classList.remove("active");
+
+                });
+
+            });
+
+
+        /* =========================
+           KAPITEL ÖFFNEN
+        ========================= */
+
+        function goToChapter(chapterId) {
+
+            const chapter =
+                document.getElementById(chapterId);
+
+            if (chapter) {
+
+                chapter.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+            }
+
+        }
+
+
+        /* =========================
+           NACH OBEN BUTTON
+        ========================= */
+
+        const topButton =
+            document.getElementById("topButton");
+
+
+        window.addEventListener("scroll", function() {
+
+            if (window.scrollY > 500) {
+
+                topButton.classList.add("visible");
+
+            } else {
+
+                topButton.classList.remove("visible");
+
+            }
+
+        });
+
+
+        topButton.addEventListener("click", function() {
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        });
+
+
+        /* =========================
+           KAPITEL ANIMIEREN
+        ========================= */
+
+        const chapters =
+            document.querySelectorAll(".chapter");
+
+
+        const observer =
+            new IntersectionObserver(
+
+                function(entries) {
+
+                    entries.forEach(function(entry) {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add("show");
+
+                        }
+
+                    });
+
+                },
+
+                {
+                    threshold: 0.15
+                }
+
+            );
+
+
+        chapters.forEach(function(chapter) {
+
+            observer.observe(chapter);
+
+        });
+
+
+        /* =========================
+           AKTUELLES JAHR
+        ========================= */
+
+        const copyright =
+            document.querySelector(".copyright");
+
+
+        if (copyright) {
+
+            copyright.textContent =
+                "© " +
+                new Date().getFullYear() +
+                " Märchenwelt · Eine eigene Märchengeschichte";
+
+        }
+
+    </script>
+
+</body>
+</html>
+```
+
